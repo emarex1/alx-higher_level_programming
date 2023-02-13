@@ -7,7 +7,7 @@ class Student:
     """ Returns to_json dictionary. """
     def to_json(self, attr=None):
         """ retrieves a dictionary representation of Student attr(list)"""
-        if attr != None:
+        if attr is not None:
             res = {k: self.__dict__[k] for k in self.__dict__.keys() & attr}
             return res
         else:
