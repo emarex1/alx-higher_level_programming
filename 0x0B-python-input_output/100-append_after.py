@@ -4,8 +4,10 @@
 
 def append_after(filename="", search_string="", new_string=""):
     """ open file"""
-    with open(filename, 'a') as f:
+    with open(filename) as f:
         for i in f:
             if i == search_string:
                 new_string.append(i)
-        return new_string
+
+    with open(filename) as w:
+        w.write(new_string)
