@@ -1,13 +1,15 @@
 #!/usr/bin/python3
-""" define append after function."""
+"""Defines a function that adds text to a file after every line where a
+given substring is found"""
 
 
 def append_after(filename="", search_string="", new_string=""):
-    """ open file"""
-    with open(filename) as f:
-        for i in f:
-            if i == search_string:
-                new_string.append(i)
-
-    with open(filename) as w:
-        w.write(new_string)
+    """Adds text to a file after every line where a given substring
+    is found"""
+    with open(filename, "r+") as f:
+        text = ""
+        for line in f:
+            if search_string in line:
+                line += new_string
+            text += line
+        f.write(text)
