@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+""" Defines class Student. """
+
+
 class Student:
     """ instantiates first_name, last_name and age"""
     def __init__(self, first_name, last_name, age):
